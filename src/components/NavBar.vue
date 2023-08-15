@@ -1,5 +1,15 @@
 <script>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { onBeforeRouteUpdate } from 'vue-router';
+
+const isScrollingToTerms = ref(false);
+
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 export default {
   setup() {
@@ -20,9 +30,36 @@ export default {
       isScrolled.value = window.scrollY > 9; // Adjust 9 to your desired scroll threshold
     };
 
+    const scrollToTermsAndCondition = () => {
+      if (isScrollingToTerms.value) {
+        scrollToSection('termsAndCondition');
+      }
+    };
+
+    onBeforeRouteUpdate((to, from, next) => {
+      if (to.hash === '#termsAndCondition') {
+        isScrollingToTerms.value = true;
+      } else {
+        isScrollingToTerms.value = false;
+      }
+      next();
+    });
+
+    scrollToTermsAndCondition();
+    
     return {
       isScrolled,
+      scrollToTermsAndCondition
     };
+  },
+  beforeRouteEnter(to, from, next) {
+    if (to.hash === '#termsAndCondition') {
+      next((vm) => {
+        vm.scrollToTermsAndCondition();
+      });
+    } else {
+      next();
+    }
   },
   computed: {
     navClasses() {
@@ -53,15 +90,17 @@ export default {
                   <router-link to="/">Home</router-link>
                 </li>
                 <li>
-                  <a href="#termsAndCondition">Perundangan & Kekerasan Seksual</a>
+                  <router-link to="/#termsAndCondition">Perundangan & Kekerasan Seksual</router-link>
                 </li>
-                <li>Alur Pelaporan</li>
+                <li>
+                  <router-link to="/reporting">Alur Pelaporan</router-link>
+                </li>
                 <li>FAQ</li>
                 <li>Tentang Kami</li>
             </ul>
         </div>
         <div>
-            <a href="#" class="bg-[#ffc107] px-6 py-2 font-semibold font-serif rounded">Buat Aduan</a>
+          <h1 class="text-[#ffc107] font-bold font-serif text-lg">GRATIS</h1>
         </div>
       </div>
 </template>
