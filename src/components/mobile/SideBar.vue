@@ -84,38 +84,37 @@ export default {
 </script>
 
 <template>
-    <div :class="navClasses" class="navbar flex lg:justify-between items-center p-2 lg:px-16 lg:py-4 border-b-2 bg-white fixed w-full text-sm">
-        <div class="flex items-center space-x-2">
-          <div class="w-10 h-10">
-            <img src="../assets/images/logo.png">
-          </div>
-          <h1 class="font-semibold">Satgas PPKS STMIK STI&K Jakarta</h1>
+    <div class="bg-white border-r-2 border-amber-300 fixed top-0 bottom-0 left-0 z-10 w-4/5 block lg:hidden">
+        <div class="flex items-center space-x-2 border-b-2 pl-2 pb-2 pt-2">
+            <div class="w-10 h-10">
+                <img src="../../assets/images/logo.png">
+            </div>
+            <h1 class="font-semibold text-sm">Satgas PPKS STMIK STI&K Jakarta</h1>
         </div>
-        <div class="hidden lg:block">
-            <ul class="flex space-x-6">
-                <li>
-                  <router-link to="/" :class="currentRoute === '/' ? 'border-b pb-2 border-amber-400' : ''">Home</router-link>
+        <div class="">
+            <ul class="mobile-nav">
+                <li class="flex items-center" :class="currentRoute === '/' ? 'bg-red-400' : ''">
+                  <router-link to="/" class="w-full h-full">Home</router-link>
                 </li>
-                <li>
-                  <router-link to="/#termsAndCondition" :class="currentRoute === '/#termsAndCondition' ? 'border-b pb-2 border-amber-400' : ''">Perundangan & Kekerasan Seksual</router-link>
+                <li class="flex items-center" :class="currentRoute === '/#termsAndCondition' ? 'bg-red-400' : ''">
+                  <router-link to="/#termsAndCondition" class="w-full h-full">Perundangan & Kekerasan Seksual</router-link>
                 </li>
-                <li>
-                  <router-link to="/reporting" :class="currentRoute === '/reporting' ? 'border-b pb-2 border-amber-400' : ''">Alur Pelaporan</router-link>
+                <li class="flex items-center" :class="currentRoute === '/reporting' ? 'bg-red-400' : ''">
+                  <router-link to="/reporting" class="w-full h-full">Alur Pelaporan</router-link>
                 </li>
                 <!-- <li>FAQ</li> -->
-                <li>
-                  <router-link to="/about-us" :class="currentRoute === '/about-us' ? 'border-b pb-2 border-amber-400' : ''">Tentang Kami</router-link>
+                <li class="flex items-center" :class="currentRoute === '/about-us' ? 'bg-red-400' : ''">
+                  <router-link to="/about-us" class="w-full h-full">Tentang Kami</router-link>
                 </li>
             </ul>
         </div>
-        <div class="hidden">
-          <h1 class="text-[#ffc107] font-bold font-serif text-lg">GRATIS</h1>
-        </div>
-      </div>
+    </div>
 </template>
 
 <style>
-.on-top {
-  top: 0;
+.mobile-nav li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
 }
 </style>
