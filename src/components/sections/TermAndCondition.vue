@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-    <section class="mt-16 pt-10 bg-gray-100 px-16" id="termsAndCondition">
+    <section class="mt-16 pt-10 pb-16 bg-gray-100 px-16" id="termsAndCondition">
         <h1 class="text-3xl font-bold text-center">Jenis-jenis Perundangan dan Kekerasan Seksual</h1>
         <div class="flex pt-16">
             <div class="w-1/2 px-8">

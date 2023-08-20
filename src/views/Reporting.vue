@@ -57,10 +57,10 @@
                     <div class="h-0.5 w-full bg-slate-300"></div>
                 </div>
                 <div>
-                    <h3 class="font-bold">Menghubungi</h3>
-                    <div class="text-xs m-0 text-slate-400 opacity-90">Langkah Pertama</div>
+                    <h3 class="font-bold">Konsultasi</h3>
+                    <div class="text-xs m-0 text-slate-400 opacity-90">Langkah Kedua</div>
                     <div class="pt-2 text-sm text-slate-500">
-                        Mahasiswa menghubungi tim Satgas STMIK STI&k Jakarta via layanan yang sudah disediakan.
+                        Melakukan konsultasi dengan tim Satgas untuk menggali kebutuhkan dan keinginan korban.
                     </div>
                 </div>
             </div>
@@ -72,10 +72,10 @@
                     <div class="h-0.5 w-full bg-slate-300"></div>
                 </div>
                 <div>
-                    <h3 class="font-bold">Menghubungi</h3>
-                    <div class="text-xs m-0 text-slate-400 opacity-90">Langkah Pertama</div>
+                    <h3 class="font-bold">Pemberian Layanan</h3>
+                    <div class="text-xs m-0 text-slate-400 opacity-90">Langkah Ketiga</div>
                     <div class="pt-2 text-sm text-slate-500">
-                        Mahasiswa menghubungi tim Satgas STMIK STI&k Jakarta via layanan yang sudah disediakan.
+                        Menyediakan layanan konseling psikologi dan rumah aman berdasarkan kebutuhan korban.
                     </div>
                 </div>
             </div>
@@ -87,10 +87,10 @@
                     <div class="h-0.5 w-full bg-slate-300"></div>
                 </div>
                 <div>
-                    <h3 class="font-bold">Menghubungi</h3>
-                    <div class="text-xs m-0 text-slate-400 opacity-90">Langkah Pertama</div>
+                    <h3 class="font-bold">Penanganan</h3>
+                    <div class="text-xs m-0 text-slate-400 opacity-90">Langkah Terakhir</div>
                     <div class="pt-2 text-sm text-slate-500">
-                        Mahasiswa menghubungi tim Satgas STMIK STI&k Jakarta via layanan yang sudah disediakan.
+                        Satgas mengirim rekomendasi pada Rektor tentang tindakan yang akan dilakukan mengenai kasus tersebut.
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
+import { useRoute } from 'vue-router';
 
 const isScrollingToTerms = ref(false);
 
@@ -13,6 +14,11 @@ const scrollToSection = (id) => {
 
 export default {
   setup() {
+    const route = useRoute()
+    const currentRoute = computed(() => route.fullPath)
+    const activeClass = computed(() => {
+      return 'text-red-600'
+    });
     const isScrolled = ref(false);
 
     // Add scroll event listener when component is mounted
@@ -48,6 +54,7 @@ export default {
     scrollToTermsAndCondition();
     
     return {
+      currentRoute,
       isScrolled,
       scrollToTermsAndCondition
     };
@@ -87,16 +94,18 @@ export default {
         <div>
             <ul class="flex space-x-6">
                 <li>
-                  <router-link to="/">Home</router-link>
+                  <router-link to="/" :class="currentRoute === '/' ? 'border-b pb-2 border-amber-400' : ''">Home</router-link>
                 </li>
                 <li>
-                  <router-link to="/#termsAndCondition">Perundangan & Kekerasan Seksual</router-link>
+                  <router-link to="/#termsAndCondition" :class="currentRoute === '/#termsAndCondition' ? 'border-b pb-2 border-amber-400' : ''">Perundangan & Kekerasan Seksual</router-link>
                 </li>
                 <li>
-                  <router-link to="/reporting">Alur Pelaporan</router-link>
+                  <router-link to="/reporting" :class="currentRoute === '/reporting' ? 'border-b pb-2 border-amber-400' : ''">Alur Pelaporan</router-link>
                 </li>
-                <li>FAQ</li>
-                <li>Tentang Kami</li>
+                <!-- <li>FAQ</li> -->
+                <li>
+                  <router-link to="/about-us" :class="currentRoute === '/about-us' ? 'border-b pb-2 border-amber-400' : ''">Tentang Kami</router-link>
+                </li>
             </ul>
         </div>
         <div>
