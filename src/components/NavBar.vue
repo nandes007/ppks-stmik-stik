@@ -108,9 +108,6 @@ export default {
                 </li>
             </ul>
         </div>
-        <div class="hidden">
-          <h1 class="text-[#ffc107] font-bold font-serif text-lg">GRATIS</h1>
-        </div>
       </div>
 </template>
 
