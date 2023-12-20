@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   base: '/https://ppks-stmik-stik.vercel.app/',
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   scrollBehavior(to, from, savedPosition) {
     if (to.hash === '#termsAndCondition') {
       return { el: '#termsAndCondition', behavior: 'smooth' };
