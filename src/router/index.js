@@ -1,4 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../views/Home.vue'
+import Reporting from '../views/Reporting.vue'
+import AboutUs from '../views/AboutUs.vue'
 
 const router = createRouter({
   base: '/https://ppks-stmik-stik.vercel.app/',
@@ -14,15 +17,15 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: import('../views/Home.vue')
+      component: Home
     },
     {
       path: '/reporting',
-      component: import('../views/Reporting.vue')
+      component: Reporting
     },
     {
       path: '/about-us',
-      component: import('../views/AboutUs.vue')
+      component: AboutUs
     }
   ]
 })
