@@ -4,7 +4,7 @@
     <div class="pt-20 px-16">
         <div class="flex justify-center pt-16 pb-48">
             <div class="w-full">
-                <h1 class="text-4xl font-bold text-center">SK SATGAS</h1>
+                <h1 class="text-4xl font-bold text-center">Satuan Tugas</h1>
                 <h5 class="text-center pt-4 text-slate-500 text-xl">Kami Siap Membantu Anda</h5>
 
                 <div class="pt-14 flex justify-center ">

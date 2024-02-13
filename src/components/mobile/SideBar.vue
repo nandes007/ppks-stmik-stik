@@ -89,7 +89,7 @@ export default {
             <div class="w-10 h-10">
                 <img src="../../assets/images/logo.png">
             </div>
-            <h1 class="font-semibold text-sm">Satgas PPKS STMIK STI&K Jakarta</h1>
+            <h1 class="font-semibold text-sm">Satgas PPKS STMIK Jakarta STI&K</h1>
         </div>
         <div class="">
             <ul class="mobile-nav">

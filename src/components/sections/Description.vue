@@ -2,10 +2,10 @@
 
 <template>
     <section class="mt-16 px-4 pt-8 pb-20 bg-[#ffebcc] text-center">
-      <h1 class="font-bold text-3xl">Apa itu Satgas PPKS STMIK STI&K Jakarta?</h1>
+      <h1 class="font-bold text-3xl">Apa itu Satgas PPKS STMIK Jakarta STI&K?</h1>
       <p class="text-slate-600 pt-4 pb-8 font-semibold">Mengenal lebih dekat apa dan kenapa Satgas ini dibentuk.</p>
       <div class="text-slate-600 px-40">
-        Satgas PPKS STMIK STI&K Jakarta adalah tim khusus yang didirikan untuk mengatasi masalah perundungan dan kekerasan seksual di kampus kami.
+        Satgas PPKS STMIK Jakarta STI&K adalah tim khusus yang didirikan untuk mengatasi masalah perundungan dan kekerasan seksual di kampus kami.
         Tujuan kami adalah menciptakan kampus yang aman, nyaman, dan kondusif bagi seluruh sivitas akademika.
         Tim ini bekerja sesuai mandat Kemendikbud dalam mencegah dan menangani kekerasan seksual di perguruan tinggi.
         Kami memiliki tenaga ahli yang kompeten dalam penanganan kasus sensitif.
