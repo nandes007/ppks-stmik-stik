@@ -11,15 +11,17 @@ const state = reactive({
 
 async function setup() {
     try {
-        const response = await axios.get('http://127.0.0.1:8000/api/tickets', {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+      const token = localStorage.getItem("token");
+      const response = await axios.get('http://127.0.0.1:8000/api/tickets', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+      });
 
-        const data = response.data;
-        state.countPendingTicket = data.count_pending_ticket;
-        state.countResolvedTicket = data.count_resolved_ticket;
+      const data = response.data;
+      state.countPendingTicket = data.count_pending_ticket;
+      state.countResolvedTicket = data.count_resolved_ticket;
     } catch (error) {
       state.errorMessage = 'Something went wrong!';
       setTimeout(() => {

@@ -19,15 +19,17 @@ const ticket = ref(null);
 
 async function setup() {
     try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/tickets/${param.id}`, {
-          headers: {
-              'Content-Type': 'application/json'
-          }
-        });
+      const token = localStorage.getItem("token");
+      const response = await axios.get(`http://127.0.0.1:8000/api/tickets/${param.id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
 
-        const data = response.data;
-        ticket.value = data.ticket;
-        console.log(data);
+      const data = response.data;
+      ticket.value = data.ticket;
+      console.log(data);
     } catch (error) {
       state.errorMessage = 'Something went wrong!';
       setTimeout(() => {
@@ -38,17 +40,19 @@ async function setup() {
 
 async function update(status) {
     try {
-        const formData = new FormData();
-        formData.append("status", status);
-        const response = await axios.put(`http://127.0.0.1:8000/api/tickets/${param.id}`, formData, {
-          headers: {
-              'Content-Type': 'application/json'
-          }
-        });
+      const token = localStorage.getItem("token");
+      const formData = new FormData();
+      formData.append("status", status);
+      const response = await axios.put(`http://127.0.0.1:8000/api/tickets/${param.id}`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
 
-        const data = response.data;
-        ticket.value = data.ticket;
-        console.log(data);
+      const data = response.data;
+      ticket.value = data.ticket;
+      console.log(data);
     } catch (error) {
       state.errorMessage = 'Something went wrong!';
       setTimeout(() => {

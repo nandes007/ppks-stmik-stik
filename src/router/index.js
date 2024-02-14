@@ -5,6 +5,7 @@ import AboutUs from '../views/AboutUs.vue'
 import ComplaintForm from '../views/ComplaintForm.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import Tracking from '../views/Tracking.vue'
 
 /**
  * Admin Component
@@ -40,6 +41,11 @@ const routes = [
   {
     path: '/complaint',
     component: ComplaintForm,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/tracking',
+    component: Tracking,
     meta: { requiresAuth: true },
   },
   {

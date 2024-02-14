@@ -12,18 +12,20 @@ const tickets = ref([]);
 
 async function setup() {
     try {
-        const response = await axios.get('http://127.0.0.1:8000/api/tickets', {
-          params: {
-            status: 'Resolved'
-          },
-          headers: {
-              'Content-Type': 'application/json'
-          }
-        });
+      const token = localStorage.getItem("token");
+      const response = await axios.get('http://127.0.0.1:8000/api/tickets', {
+        params: {
+          status: 'Resolved'
+        },
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
 
-        const data = response.data;
-        tickets.value = data.tickets.data;
-        console.log(data);
+      const data = response.data;
+      tickets.value = data.tickets.data;
+      console.log(data);
     } catch (error) {
       state.errorMessage = 'Something went wrong!';
       setTimeout(() => {
