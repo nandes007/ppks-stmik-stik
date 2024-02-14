@@ -1,6 +1,6 @@
 <script setup>
 import axios from 'axios'
-import { reactive, ref } from 'vue'
+import { reactive, ref, onMounted } from 'vue'
 import TopBar from '../components/TopBar.vue'
 import NavBar from '../components/NavBar.vue'
 import Footer from '../components/Footer.vue'
@@ -50,6 +50,7 @@ function handleFileChange(event) {
 
 async function onSubmit() {
     try {
+        const token = localStorage.getItem("token");
         const formData = new FormData();
         formData.append("nama", state.nama);
         formData.append("email", state.email);
@@ -61,6 +62,7 @@ async function onSubmit() {
         }
         const response = await axios.post('http://127.0.0.1:8000/api/tickets', formData, {
             headers: {
+                Authorization: `Bearer ${token}`,
                 'Content-Type': 'multipart/form-data'
             }
         });
@@ -89,6 +91,24 @@ async function onSubmit() {
     }
 
 }
+
+async function getUser() {
+    try {
+        const token = localStorage.getItem("token");
+        const response = await axios.get('http://127.0.0.1:8000/api/user', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        console.log(response);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+onMounted(() => {
+    getUser();
+})
 </script>
 
 <template>
