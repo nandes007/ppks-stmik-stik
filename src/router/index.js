@@ -11,9 +11,10 @@ import AdminApp from '../views/admin/AdminApp.vue'
 import HomeView from '../views/admin/HomeView.vue'
 import PendingTicket from '../views/admin/PendingTicket.vue'
 import ResolvedTicket from '../views/admin/ResolvedTicket.vue'
+import ShowTicket from '../views/admin/ShowTicket.vue'
 
 const router = createRouter({
-  base: '/https://ppks-stmik-stik.vercel.app/',
+  // base: '/https://ppks-stmik-stik.vercel.app/',
   // history: createWebHistory(import.meta.env.BASE_URL),
   history: createWebHistory(),
   scrollBehavior(to, from, savedPosition) {
@@ -59,6 +60,12 @@ const router = createRouter({
           name: 'resolved-tickets',
           component: ResolvedTicket
         },
+        {
+          path: 'show-ticket/:id',
+          name: 'show-ticket',
+          props: true,
+          component: ShowTicket,
+        }
       ]
     },
   ]

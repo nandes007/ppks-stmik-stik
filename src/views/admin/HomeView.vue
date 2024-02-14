@@ -1,3 +1,38 @@
+<script setup>
+import axios from 'axios'
+import { reactive, onMounted } from 'vue'
+
+const state = reactive({
+  countPendingTicket: 0,
+  countResolvedTicket: 0,
+  errorMessage: '',
+  successMessage: ''
+})
+
+async function setup() {
+    try {
+        const response = await axios.get('http://127.0.0.1:8000/api/tickets', {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const data = response.data;
+        state.countPendingTicket = data.count_pending_ticket;
+        state.countResolvedTicket = data.count_resolved_ticket;
+    } catch (error) {
+      state.errorMessage = 'Something went wrong!';
+      setTimeout(() => {
+          state.errorMessage = '';
+      }, 2000);
+    }
+}
+
+onMounted(() => {
+  setup();
+})
+</script>
+
 <template>
     <div>
       <h3 class="text-3xl font-medium text-gray-700">
@@ -46,7 +81,7 @@
   
               <div class="mx-5">
                 <h4 class="text-2xl font-semibold text-gray-700">
-                  8,282
+                  {{ state.countPendingTicket }}
                 </h4>
                 <div class="text-gray-500">
                   Total Pending Ticket
@@ -95,7 +130,7 @@
   
               <div class="mx-5">
                 <h4 class="text-2xl font-semibold text-gray-700">
-                  8,282
+                  {{ state.countResolvedTicket }}
                 </h4>
                 <div class="text-gray-500">
                   Total Resolved Ticket
