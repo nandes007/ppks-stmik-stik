@@ -4,6 +4,14 @@ import Reporting from '../views/Reporting.vue'
 import AboutUs from '../views/AboutUs.vue'
 import ComplaintForm from '../views/ComplaintForm.vue'
 
+/**
+ * Admin Component
+ */
+import AdminApp from '../views/admin/AdminApp.vue'
+import HomeView from '../views/admin/HomeView.vue'
+import PendingTicket from '../views/admin/PendingTicket.vue'
+import ResolvedTicket from '../views/admin/ResolvedTicket.vue'
+
 const router = createRouter({
   base: '/https://ppks-stmik-stik.vercel.app/',
   // history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,7 +39,28 @@ const router = createRouter({
     {
       path: '/complaint',
       component: ComplaintForm
-    }
+    },
+    {
+      path: '/admin',
+      component: AdminApp,
+      children: [
+        {
+          path: '',
+          name: 'admin',
+          component: HomeView
+        },
+        {
+          path: 'pending-tickets',
+          name: 'pending-tickets',
+          component: PendingTicket
+        },
+        {
+          path: 'resolved-tickets',
+          name: 'resolved-tickets',
+          component: ResolvedTicket
+        },
+      ]
+    },
   ]
 })
 

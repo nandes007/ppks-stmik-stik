@@ -1,6 +1,13 @@
-<script></script>
+<script setup>
+import TopBar from '../components/TopBar.vue'
+import NavBar from '../components/NavBar.vue'
+import Footer from '../components/Footer.vue'
+</script>
 
 <template>
+    <TopBar />
+    <NavBar />
+
     <div class="pt-20 lg:pb-60 xl:pb-0 px-16">
         <div class="flex pt-16 pb-32">
             <div class="w-1/2">
@@ -96,4 +103,6 @@
             </div>
         </div>
     </div>
+
+    <Footer />
 </template>

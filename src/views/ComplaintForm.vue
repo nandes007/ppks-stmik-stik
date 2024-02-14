@@ -1,6 +1,9 @@
 <script setup>
 import axios from 'axios'
 import { reactive, ref } from 'vue'
+import TopBar from '../components/TopBar.vue'
+import NavBar from '../components/NavBar.vue'
+import Footer from '../components/Footer.vue'
 
 const state = reactive({
     nama: '',
@@ -89,6 +92,8 @@ async function onSubmit() {
 </script>
 
 <template>
+    <TopBar />
+    <NavBar />
     <div class="pt-28 lg:pb-60 xl:pb-20 px-16 flex flex-col items-center justify-center">
         <div v-if="state.errorMessage != ''" class="w-1/2 pb-6">
             <div class="w-full bg-red-600 text-white py-1 flex justify-center items-center space-x-4 rounded-lg shadow-lg">
@@ -160,4 +165,6 @@ async function onSubmit() {
             </form>
         </div>
     </div>
+
+    <Footer />
 </template>

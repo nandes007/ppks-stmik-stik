@@ -1,6 +1,13 @@
-<script></script>
+<script setup>
+import TopBar from '../components/TopBar.vue'
+import NavBar from '../components/NavBar.vue'
+import Footer from '../components/Footer.vue'
+</script>
 
 <template>
+    <TopBar />
+    <NavBar />
+
     <div class="pt-20 lg:pb-80 xl:pb-0 px-16">
         <div class="flex justify-center pt-16 pb-48">
             <div class="w-full">
@@ -26,4 +33,6 @@
             </div>
         </div>
     </div>
+
+    <Footer />
 </template>
