@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-    <div class="pt-20 px-16">
+    <div class="pt-20 lg:pb-60 xl:pb-0 px-16">
         <div class="flex pt-16 pb-32">
             <div class="w-1/2">
                 <h1 class="text-3xl font-bold">Buat Aduan Kamu Sekarang!</h1>
@@ -11,7 +11,7 @@
             </div>
             <div class="w-1/2 space-y-6 pl-20">
                 <div>
-                    <button class="bg-green-500 py-2 px-2 space-x-6 rounded text-white w-1/2 flex items-center hover:opacity-90">
+                    <button class="bg-green-500 py-2 px-2 space-x-6 rounded text-white lg:w-full xl:w-1/2 flex items-center hover:opacity-90">
                         <div class="px-2 py-1.5 bg-white rounded-md">
                             <img src="../assets/icon/whats-app-image.svg" width="16" height="16">
                         </div>
@@ -21,7 +21,7 @@
                     </button>
                 </div>
                 <div>
-                    <button class="bg-red-500 py-2 px-2 space-x-6 rounded text-white w-1/2 flex items-center hover:opacity-90">
+                    <button class="bg-red-500 py-2 px-2 space-x-6 rounded text-white lg:w-full xl:w-1/2 flex items-center hover:opacity-90">
                         <div class="px-2 py-1.5 bg-white rounded-md">
                             <img src="../assets/icon/gmail-image.svg" width="20" height="20">
                         </div>
