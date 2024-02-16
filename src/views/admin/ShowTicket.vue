@@ -92,7 +92,7 @@ onMounted(() => {
             <tr>
                 <td class="border-2 border-slate-400 pl-2">Status</td>
                 <td class="border-2 border-slate-400 pl-2">:</td>
-                <td class="border-2 border-slate-400 pl-2">{{ ticket?.status ?? '' }}</td>
+                <td class="border-2 border-slate-400 pl-2">{{ ticket?.status_alias ?? '' }}</td>
             </tr>
             <tr>
                 <td class="border-2 border-slate-400 pl-2">Email</td>
