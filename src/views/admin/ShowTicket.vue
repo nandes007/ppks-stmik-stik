@@ -117,7 +117,13 @@ onMounted(() => {
             <tr>
                 <td class="border-2 border-slate-400 pl-2">Attachment</td>
                 <td class="border-2 border-slate-400 pl-2">:</td>
-                <td class="border-2 border-slate-400 pl-2">{{ ticket?.deskripsi ?? '' }}</td>
+                <td class="border-2 border-slate-400 pl-2">
+                  <div v-if="ticket?.attachments" class="flex space-x-4 overflow-x-scroll">
+                    <div v-for="attachment in ticket?.attachments" class="flex">
+                      <img :src="attachment?.signed_url" class="w-40 h-40">
+                    </div>
+                  </div>
+                </td>
             </tr>
         </table>
     </div>
