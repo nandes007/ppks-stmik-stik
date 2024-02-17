@@ -17,7 +17,7 @@ const state = reactive({
 async function getUser() {
     try {
         const token = localStorage.getItem("token");
-        const response = await axios.get('http://127.0.0.1:8000/api/user', {
+        const response = await axios.get(`${import.meta.env.VITE__APP_URL}/api/user`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -26,7 +26,7 @@ async function getUser() {
         const data = response.data;
         user.value = data.user;
         ticket.value = data.user.ticket;
-        console.log(user.value.ticket);
+        // console.log(user.value.ticket);
     } catch (error) {
         console.log(error);
     }

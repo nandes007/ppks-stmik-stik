@@ -13,7 +13,7 @@ const tickets = ref([]);
 async function setup() {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get('http://127.0.0.1:8000/api/tickets', {
+      const response = await axios.get(`${import.meta.env.VITE__APP_URL}/api/tickets`, {
         params: {
           status: 'Resolved'
         },
@@ -25,8 +25,9 @@ async function setup() {
 
       const data = response.data;
       tickets.value = data.tickets.data;
-      console.log(data);
+      // console.log(data);
     } catch (error) {
+      console.log(error);
       state.errorMessage = 'Something went wrong!';
       setTimeout(() => {
           state.errorMessage = '';

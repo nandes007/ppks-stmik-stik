@@ -20,7 +20,7 @@ async function onSubmit() {
         formData.append("name", state.name);
         formData.append("email", state.email);
         formData.append("password", state.password);
-        const response = await axios.post('http://127.0.0.1:8000/api/register', formData, {
+        const response = await axios.post(`${import.meta.env.VITE__APP_URL}/api/register`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

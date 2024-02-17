@@ -60,7 +60,7 @@ async function onSubmit() {
         for (const attachment of attachments.value) {
             formData.append("attachments[]", attachment);
         }
-        const response = await axios.post('http://127.0.0.1:8000/api/tickets', formData, {
+        const response = await axios.post(`${import.meta.env.VITE__APP_URL}/api/tickets`, formData, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'multipart/form-data'
@@ -95,12 +95,12 @@ async function onSubmit() {
 async function getUser() {
     try {
         const token = localStorage.getItem("token");
-        const response = await axios.get('http://127.0.0.1:8000/api/user', {
+        const response = await axios.get(`${import.meta.env.VITE__APP_URL}/api/user`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
-        console.log(response);
+        // console.log(response);
     } catch (error) {
         console.log(error);
     }

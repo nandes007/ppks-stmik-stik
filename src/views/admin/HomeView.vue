@@ -12,7 +12,7 @@ const state = reactive({
 async function setup() {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get('http://127.0.0.1:8000/api/tickets', {
+      const response = await axios.get(`${import.meta.env.VITE__APP_URL}/api/tickets`, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'

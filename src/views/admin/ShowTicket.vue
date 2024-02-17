@@ -20,7 +20,7 @@ const ticket = ref(null);
 async function setup() {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get(`http://127.0.0.1:8000/api/tickets/${param.id}`, {
+      const response = await axios.get(`${import.meta.env.VITE__APP_URL}/api/tickets/${param.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -29,8 +29,9 @@ async function setup() {
 
       const data = response.data;
       ticket.value = data.ticket;
-      console.log(data);
+      // console.log(data);
     } catch (error) {
+      console.log(error);
       state.errorMessage = 'Something went wrong!';
       setTimeout(() => {
           state.errorMessage = '';
@@ -43,7 +44,7 @@ async function update(status) {
       const token = localStorage.getItem("token");
       const formData = new FormData();
       formData.append("status", status);
-      const response = await axios.put(`http://127.0.0.1:8000/api/tickets/${param.id}`, formData, {
+      const response = await axios.put(`${import.meta.env.VITE__APP_URL}/api/tickets/${param.id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -52,7 +53,7 @@ async function update(status) {
 
       const data = response.data;
       ticket.value = data.ticket;
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       state.errorMessage = 'Something went wrong!';
       setTimeout(() => {
