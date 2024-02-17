@@ -33,8 +33,11 @@ const isHasTicket = computed(() => {
 })
 
 onMounted(() => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    getUser();
+  }
   console.log(import.meta.env.VITE__APP_URL);
-  getUser();
 })
 </script>
 
