@@ -45,7 +45,7 @@ onMounted(() => {
     <section class="consultation px-4 pt-20">
       <div class="flex justify-center pt-8">
         <div class="flex bg-slate-200 text-sm space-x-2 p-1 rounded-full items-center">
-          <span class="bg-yellow-500 px-4 py-1 flex justify-center items-center rounded-full">Baru {{ isHasTicket }}</span>
+          <span class="bg-yellow-500 px-4 py-1 flex justify-center items-center rounded-full">Baru</span>
           <h5 class="text-slate-500">Layanan Konsultasi dan Pengaduan</h5>
           <span class="text-slate-500 font-semibold">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
